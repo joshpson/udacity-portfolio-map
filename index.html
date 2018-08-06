@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API Project</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+      <!-- Header Start -->
+      <header>
+      <div class="row header">
+        <div class="col-sm-8 text-uppercase responsive-hide">
+          <h1 id="Title">Best Bars in DC</h1>
+        </div>
+        <div class="col-sm-4 text-right header-image">
+          <img src="images/Flag_map_of_Washington_DC.png" alt="DC Flag">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12"><hr class="line"></div>
+      </div>
+      </header>
+      <!-- Header End -->
+      <main>
+      <!-- Restraunt Area Start -->
+      <div id="bars" class="col-sm-4 bar-list">
+        <!-- Selected Restraunt Start -->
+        <p><br><strong>Choose your neighborhood:</strong><br>
+        <select class="form-control" data-bind="options: uniqueNeighborhoods,
+                         selectedOptions: selectedNeighborhood"></select></p><br>
+        <div data-bind="foreach: selectedRestaurant">
+          <a href="#" data-bind="click: $parent.clickedRestaurant">
+            <h4 data-bind="text: name"></h4>
+          </a>
+          <span data-bind="text: neighborhood"></span><br>
+          <span data-bind="text: address"></span><br>
+          <a data-bind="attr: {href: url}" target="_blank">
+            <span data-bind="text: url"></span>
+          </a><br>
+          <img class="img-style" data-bind="attr: {src: image}" alt="foursquare image">
+          <p>Information courtesy of
+            <a href="https://foursquare.com/" target="_blank">foursquare.com</a>
+          </p>
+        </div>
+        <!-- Selected End -->
+        <!-- Restraunt List Start -->
+        <ul data-bind="foreach: restaurants" class="list">
+          <li>
+            <a href="#" data-bind="click: $parent.clickedRestaurant">
+              <h4 data-bind="text: name"></h4>
+            </a>
+            <span data-bind="text: neighborhood"></span>
+          </li>
+        </ul>
+        <!-- Restraunt List End -->
+      </div>
+      <!-- Restraunt Area End -->
+      <!-- Map Start -->
+      <div class="col-sm-8">
+        <div id="map" class="google-map"></div>
+        </div>
+        <!-- Map End -->
+        </main>
+    </div>
+    <footer>
+      <script src="js/knockout.js"></script>
+      <script src="http://code.jquery.com/jquery-latest.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/foursquare.js"></script>
+      <script async defer
+           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9xJTz62VG_dhb7WRxfygftaOMLXgMjeo&callback=initMap" onerror="errorMap()">
+        </script>
+      </footer>
+  </body>
+</html>

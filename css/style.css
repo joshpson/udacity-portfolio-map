@@ -1,0 +1,54 @@
+body {
+	font-family: arial;
+	background-color: #fff;
+}
+
+.header-image {
+	padding: 10px 10px 0 10px;
+}
+
+.bar-list {
+	padding: 15px;
+}
+
+.list {
+	list-style: none;
+	padding: 0 10px;
+}
+
+.google-map {
+	height: 500px;
+	width: 100%;
+	margin: 15px;
+}
+
+.img-style {
+	width: 100%;
+}
+
+.hidden {
+	width: 0px;
+	height: 0px;
+	visibility: hidden;
+}
+
+
+@media (max-width: 768px) {
+	.header-image {
+		text-align: center;
+		padding: 0;
+	}
+
+	.responsive-hide {
+		visibility: hidden;
+		height: 0px;
+	}
+
+	.bar-list {
+		padding: 0px;
+	}
+
+	.google-map {
+		margin: 0px;
+	}
+}
